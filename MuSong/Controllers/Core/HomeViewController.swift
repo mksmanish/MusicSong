@@ -208,8 +208,12 @@ class HomeViewController: UIViewController {
         sections.append(.newReleases(viewModels: newAlbum.compactMap({
             return NewReleasesCellViewModel(name: $0.name, artworkURL: URL(string: $0.images.first?.url ?? ""), numberOfTracks: $0.total_tracks, artistName: $0.artists.first?.name ?? "-")
         })))
-        sections.append(.featuredPlatlists(viewModels: []))
-        sections.append(.recommendedTracks(viewModels: []))
+        sections.append(.featuredPlatlists(viewModels: playlists.compactMap{
+            return FeaturedPlaylistCellViewModel(name: $0.name, artworkURL: URL(string: $0.images.first?.url ?? ""), createName: $0.owner.display_name)
+        }))
+        sections.append(.recommendedTracks(viewModels: tracks.compactMap{
+            return RecommenededTrackCellViewModel(name: $0.name, artistName: $0.artists.first?.name ?? "-", artworkURL: URL(string: $0.album?.images.first?.url ?? ""))
+        }))
         collectonview.reloadData()
     }
     
@@ -255,11 +259,15 @@ extension HomeViewController :UICollectionViewDelegate,UICollectionViewDataSourc
             return cell
         case .featuredPlatlists(viewModels: let viewModels):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedPlaylistCollectionViewCell.identifier, for: indexPath) as? FeaturedPlaylistCollectionViewCell else { return UICollectionViewCell()}
-            cell.backgroundColor = .systemBlue
+            let viewModel = viewModels[indexPath.row]
+            cell.configure(with: viewModel)
+         //   cell.backgroundColor = .systemBlue
             return cell
         case .recommendedTracks(viewModels: let viewModels):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedTrackCollectionViewCell.identifier, for: indexPath) as? RecommendedTrackCollectionViewCell else {return UICollectionViewCell()}
-            cell.backgroundColor = .systemOrange
+            let viewModel = viewModels[indexPath.row]
+            cell.configure(with: viewModel)
+        //    cell.backgroundColor = .systemOrange
             return cell
         }
         
