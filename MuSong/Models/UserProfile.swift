@@ -15,15 +15,12 @@ struct UserProfile : Codable{
     let explicit_content : [String:Bool]
     let external_urls : [String:String]
    // let folowers: [String:Codable?]
-  //  let image:UserImage
+    let image:[APIImage]
     let id : String
     let product:String
     
 }
 
-struct UserImage : Codable {
-    let url:String
-    
-}
+
 
 
