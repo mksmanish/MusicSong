@@ -32,9 +32,13 @@
 		8E83FFF02842010300D09604 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E83FFEF2842010300D09604 /* SettingsModels.swift */; };
 		8ED42D4B28405DD90088E1B9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED42D4A28405DD90088E1B9 /* Extensions.swift */; };
 		8ED42D4D28413FF20088E1B9 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED42D4C28413FF20088E1B9 /* AuthResponse.swift */; };
+		9DAEC758C345D1507DA625E4 /* Pods_MuSong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490386D4AE01557F0CFBCB52 /* Pods_MuSong.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FA31C3DC11AF6056D5F910B /* Pods-MuSong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuSong.debug.xcconfig"; path = "Target Support Files/Pods-MuSong/Pods-MuSong.debug.xcconfig"; sourceTree = "<group>"; };
+		490386D4AE01557F0CFBCB52 /* Pods_MuSong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuSong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		572FBE88005C99CDFF8AC13B /* Pods-MuSong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuSong.release.xcconfig"; path = "Target Support Files/Pods-MuSong/Pods-MuSong.release.xcconfig"; sourceTree = "<group>"; };
 		8E3FD2D0283FE64400E2A32C /* MuSong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuSong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E3FD2D3283FE64400E2A32C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E3FD2D5283FE64400E2A32C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,17 +73,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DAEC758C345D1507DA625E4 /* Pods_MuSong.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AF5CD6802F3371DC772CF20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				490386D4AE01557F0CFBCB52 /* Pods_MuSong.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		538BB2CC8B14B69549F6D5CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3FA31C3DC11AF6056D5F910B /* Pods-MuSong.debug.xcconfig */,
+				572FBE88005C99CDFF8AC13B /* Pods-MuSong.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8E3FD2C7283FE64400E2A32C = {
 			isa = PBXGroup;
 			children = (
 				8E3FD2D2283FE64400E2A32C /* MuSong */,
 				8E3FD2D1283FE64400E2A32C /* Products */,
+				538BB2CC8B14B69549F6D5CA /* Pods */,
+				0AF5CD6802F3371DC772CF20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,9 +220,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E3FD2E4283FE64700E2A32C /* Build configuration list for PBXNativeTarget "MuSong" */;
 			buildPhases = (
+				CB9769C7F298D5C7A4F48824 /* [CP] Check Pods Manifest.lock */,
 				8E3FD2CC283FE64400E2A32C /* Sources */,
 				8E3FD2CD283FE64400E2A32C /* Frameworks */,
 				8E3FD2CE283FE64400E2A32C /* Resources */,
+				29CED3465C1FF528F91A3E75 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +279,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29CED3465C1FF528F91A3E75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuSong/Pods-MuSong-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuSong/Pods-MuSong-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuSong/Pods-MuSong-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB9769C7F298D5C7A4F48824 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuSong-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8E3FD2CC283FE64400E2A32C /* Sources */ = {
@@ -414,6 +483,7 @@
 		};
 		8E3FD2E5283FE64700E2A32C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FA31C3DC11AF6056D5F910B /* Pods-MuSong.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -442,6 +512,7 @@
 		};
 		8E3FD2E6283FE64700E2A32C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 572FBE88005C99CDFF8AC13B /* Pods-MuSong.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
