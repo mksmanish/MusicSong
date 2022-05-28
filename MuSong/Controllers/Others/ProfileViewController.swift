@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileViewController: UIViewController {
-
+    
     
     private let tableView:UITableView = {
         let tableview = UITableView()
@@ -21,7 +22,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         fetchProfile()
         tableView.dataSource = self
@@ -29,7 +30,7 @@ class ProfileViewController: UIViewController {
         view.addSubview(tableView)
         navigationItem.title = "Profile"
         view.backgroundColor = .systemBackground
-       
+        
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -59,6 +60,7 @@ class ProfileViewController: UIViewController {
         models.append("Email Address: \(modol.email)")
         models.append("User ID: \(modol.id)")
         models.append("Plan: \(modol.product)")
+        createTableHeader(with : modol.display_name)
         tableView.reloadData()
     }
     
@@ -71,7 +73,22 @@ class ProfileViewController: UIViewController {
         label.center = view.center
     }
     
-
+    private func  createTableHeader(with string:String?) {
+        guard let urlString = string,let url = URL(string: urlString) else { return }
+        
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: view.width/1.5))
+        let imageSize: CGFloat = headerView.height/2
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: imageSize, height: imageSize))
+        headerView.addSubview(imageView)
+        imageView.center = headerView.center
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(systemName: "person.circle")
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = imageSize/2
+        tableView.tableHeaderView  = headerView
+    }
+    
+    
 }
 // MARK: - tableview datasource and delegates
 extension ProfileViewController : UITableViewDelegate,UITableViewDataSource {
@@ -89,7 +106,7 @@ extension ProfileViewController : UITableViewDelegate,UITableViewDataSource {
         return models.count
     }
     
-   
+    
     
     
 }
