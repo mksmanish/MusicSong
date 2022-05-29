@@ -29,14 +29,12 @@ final class PlayerControlsView: UIView {
 
     private let volumeSlider: UISlider = {
         let slider = UISlider()
-        slider.value = 0.1
-        slider.tintColor = .red
+        slider.value = 0.5
         return slider
     }()
 
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "This Is My Song"
         label.numberOfLines = 1
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         return label
@@ -44,7 +42,6 @@ final class PlayerControlsView: UIView {
 
     private let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Drake (feat. Some Other Artist)"
         label.numberOfLines = 1
         label.font = .systemFont(ofSize: 18, weight: .regular)
         label.textColor = .secondaryLabel
@@ -70,7 +67,7 @@ final class PlayerControlsView: UIView {
     private let playPauseButton: UIButton = {
         let button = UIButton()
         button.tintColor = .label
-        let image = UIImage(systemName: "pause.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 34, weight: .regular))
+        let image = UIImage(systemName: "pause.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 34, weight: .regular))
         button.setImage(image, for: .normal)
         return button
     }()
@@ -117,7 +114,7 @@ final class PlayerControlsView: UIView {
         delegate?.playerControlsViewDidTapPlayPauseButton(self)
 
         // Update icon
-        let pause = UIImage(systemName: "pause.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 34, weight: .regular))
+        let pause = UIImage(systemName: "pause.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 34, weight: .regular))
         let play = UIImage(systemName: "play.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 34, weight: .regular))
 
         playPauseButton.setImage(isPlaying ? pause : play, for: .normal)

@@ -17,6 +17,7 @@ protocol PlayerDataSource: AnyObject {
 }
 
 final class PlayerPresenterSong {
+    
     static let shared = PlayerPresenterSong()
 
     private var track: AudioTrack?
