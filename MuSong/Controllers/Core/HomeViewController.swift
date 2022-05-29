@@ -14,6 +14,10 @@ enum BrowseSectionType {
 }
 class HomeViewController: UIViewController {
     
+    private var newAlbum: [Album] = []
+    private var playlists: [Playlist] = []
+    private var tracks : [AudioTrack] = []
+    
     private let collectonview:UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewCompositionalLayout { sectionIndex, _ in
         HomeViewController.createSectionLayout(section: sectionIndex)
     })
@@ -205,6 +209,11 @@ class HomeViewController: UIViewController {
     
     private func configureModels(newAlbum:[Album],playlists:[Playlist],tracks:[AudioTrack]){
         // congiures models
+        
+       
+        self.newAlbum = newAlbum
+        self.playlists = playlists
+        self.tracks = tracks
         sections.append(.newReleases(viewModels: newAlbum.compactMap({
             return NewReleasesCellViewModel(name: $0.name, artworkURL: URL(string: $0.images.first?.url ?? ""), numberOfTracks: $0.total_tracks, artistName: $0.artists.first?.name ?? "-")
         })))
@@ -271,5 +280,28 @@ extension HomeViewController :UICollectionViewDelegate,UICollectionViewDataSourc
             return cell
         }
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let section = sections[indexPath.section]
+        
+        switch section {
+        case .newReleases:
+            let album = newAlbum[indexPath.row]
+            let vc = AlbumViewController(album: album)
+            vc.title = album.name
+            vc.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(vc, animated: true)
+        case .featuredPlatlists:
+            let playlist = playlists[indexPath.row]
+            let vc = PlayListViewController(playlist: playlist )
+            vc.title = playlist.name
+            vc.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(vc, animated: true)
+        case .recommendedTracks:
+            break
+        }
     }
 }

@@ -1,18 +1,18 @@
 //
-//  PlayListViewController.swift
+//  AlbumViewController.swift
 //  MuSong
 //
-//  Created by Tradesocio on 26/05/22.
+//  Created by Tradesocio on 29/05/22.
 //
 
 import UIKit
 
-class PlayListViewController: UIViewController {
+class AlbumViewController: UIViewController {
 
-    private let playlist: Playlist
+    private let album: Album
     
-    init(playlist : Playlist) {
-        self.playlist = playlist
+    init(album : Album) {
+        self.album = album
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -24,13 +24,13 @@ class PlayListViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        navigationItem.title = playlist.name
+        navigationItem.title = album.name
         view.backgroundColor = .systemBackground
         fetchdata()
     }
     
     private func fetchdata() {
-        APICaller.getPlaylist(for: playlist) { result in
+        APICaller.getAlbum(for: album) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
@@ -41,5 +41,8 @@ class PlayListViewController: UIViewController {
             }
         }
     }
+    
+    
+
 
 }
