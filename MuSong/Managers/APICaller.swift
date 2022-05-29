@@ -20,6 +20,56 @@ final class APICaller {
         
     }
     
+    // MARK: - Category
+    public func getCategories(completion: @escaping (Result<[Category], Error>) -> Void) {
+            createRequest(
+                with: URL(string: Constant.baseAPIURL + "/browse/categories?limit=50"),
+                type: .GET
+            ) { request in
+                let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                    guard let data = data, error == nil else{
+                        completion(.failure(APIError.failedToGetData))
+                        return
+                    }
+
+                    do {
+                        let result = try JSONDecoder().decode(AllCategoriesResponse.self,
+                                                              from: data)
+                        completion(.success(result.categories.items))
+                    }
+                    catch {
+                        completion(.failure(error))
+                    }
+                }
+                task.resume()
+            }
+        }
+    // MARK: - CategoryPlaylists
+    public func getCategoryPlaylists(category: Category, completion: @escaping (Result<[Playlist], Error>) -> Void) {
+           createRequest(
+               with: URL(string: Constant.baseAPIURL + "/browse/categories/\(category.id)/playlists?limit=50"),
+               type: .GET
+           ) { request in
+               let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                   guard let data = data, error == nil else{
+                       completion(.failure(APIError.failedToGetData))
+                       return
+                   }
+
+                   do {
+                       let result = try JSONDecoder().decode(CategoryPlaylistsResponse.self, from: data)
+                       let playlists = result.playlists.items
+                       completion(.success(playlists))
+                   }
+                   catch {
+                       completion(.failure(error))
+                   }
+               }
+               task.resume()
+           }
+       }
+
+    
      // MARK: - Albums
     
     static func getAlbum (for album : Album,completion:@escaping(Result<AlbumDetailResponse,Error>) -> Void) {
@@ -170,6 +220,37 @@ final class APICaller {
                     completion(.success(result))
                     
                 }catch {
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    // MARK: - Search
+    public func search(with query: String, completion: @escaping (Result<[SearchResult], Error>) -> Void) {
+        createRequest(
+            with: URL(string: Constant.baseAPIURL+"/search?limit=10&type=album,artist,playlist,track&q=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"),
+            type: .GET
+        ) { request in
+            print(request.url?.absoluteString ?? "none")
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+
+                do {
+                    let result = try JSONDecoder().decode(SearchResultsResponse.self, from: data)
+
+                    var searchResults: [SearchResult] = []
+                    searchResults.append(contentsOf: result.tracks.items.compactMap({ .track(model: $0) }))
+                    searchResults.append(contentsOf: result.albums.items.compactMap({ .album(model: $0) }))
+                    searchResults.append(contentsOf: result.artists.items.compactMap({ .artist(model: $0) }))
+                    searchResults.append(contentsOf: result.playlists.items.compactMap({ .playlist(model: $0) }))
+
+                    completion(.success(searchResults))
+                }
+                catch {
                     completion(.failure(error))
                 }
             }
