@@ -33,7 +33,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
             let group = NSCollectionLayoutGroup.horizontal(
                 layoutSize: NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
-                    heightDimension: .absolute(150)),
+                    heightDimension: .absolute(200)),
                 subitem: item,
                 count: 2
             )
@@ -59,7 +59,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
         searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         view.addSubview(collectionView)
-      collectionView.register(CategoryCollectionViewCell.self,
+        collectionView.register(CategoryCollectionViewCell.self,
                                 forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -91,16 +91,16 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
         }
         resultsController.delegate = self
 
-//        APICaller.shared.search(with: query) { result in
-//            DispatchQueue.main.async {
-//                switch result {
-//                case .success(let results):
-//                    resultsController.update(with: results)
-//                case .failure(let error):
-//                    print(error.localizedDescription)
-//                }
-//            }
-//        }
+        APICaller.shared.search(with: query) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let results):
+                    resultsController.update(with: results)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
 
     func updateSearchResults(for searchController: UISearchController) {
@@ -116,23 +116,20 @@ extension SearchViewController: SearchResultsViewControllerDelegate {
             }
             let vc = SFSafariViewController(url: url)
             present(vc, animated: true)
-             break
+
         case .album(let model):
             let vc = AlbumViewController(album: model)
             vc.navigationItem.largeTitleDisplayMode = .never
             navigationController?.pushViewController(vc, animated: true)
-            break
-      //  case .track(let model):
+        case .track(let model):
 //            PlaybackPresenter.shared.startPlayback(
 //                from: self, track: model
 //            )
+            break
         case .playlist(let model):
             let vc = PlaylistViewController(playlist: model)
             vc.navigationItem.largeTitleDisplayMode = .never
             navigationController?.pushViewController(vc, animated: true)
-            break
-        case .track(model: let model):
-            break
         }
     }
 }

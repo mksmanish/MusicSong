@@ -20,7 +20,6 @@
 		8E3FD2FC283FECAA00E2A32C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD2FB283FECAA00E2A32C /* ProfileViewController.swift */; };
 		8E3FD2FE283FECCB00E2A32C /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD2FD283FECCB00E2A32C /* PlayerViewController.swift */; };
 		8E3FD300283FECEB00E2A32C /* PlayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD2FF283FECEB00E2A32C /* PlayListViewController.swift */; };
-		8E3FD302283FED1400E2A32C /* SerachResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD301283FED1400E2A32C /* SerachResultViewController.swift */; };
 		8E3FD304283FED4E00E2A32C /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD303283FED4E00E2A32C /* AuthManager.swift */; };
 		8E3FD306283FED7300E2A32C /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD305283FED7300E2A32C /* APICaller.swift */; };
 		8E3FD308283FED9A00E2A32C /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD307283FED9A00E2A32C /* HapticsManager.swift */; };
@@ -84,7 +83,6 @@
 		8E3FD2FB283FECAA00E2A32C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8E3FD2FD283FECCB00E2A32C /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		8E3FD2FF283FECEB00E2A32C /* PlayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListViewController.swift; sourceTree = "<group>"; };
-		8E3FD301283FED1400E2A32C /* SerachResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerachResultViewController.swift; sourceTree = "<group>"; };
 		8E3FD303283FED4E00E2A32C /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		8E3FD305283FED7300E2A32C /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		8E3FD307283FED9A00E2A32C /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
@@ -287,7 +285,6 @@
 				8E3FD2FB283FECAA00E2A32C /* ProfileViewController.swift */,
 				8E3FD2FD283FECCB00E2A32C /* PlayerViewController.swift */,
 				8E3FD2FF283FECEB00E2A32C /* PlayListViewController.swift */,
-				8E3FD301283FED1400E2A32C /* SerachResultViewController.swift */,
 				8E57DDD428430DC000128461 /* AlbumViewController.swift */,
 				8E57DDE4284334A000128461 /* SearchResultsViewController.swift */,
 				8E57DDF1284337BF00128461 /* CategoryViewController.swift */,
@@ -477,7 +474,6 @@
 				8E3FD30E283FEE0100E2A32C /* Artist.swift in Sources */,
 				8E3FD2D6283FE64400E2A32C /* SceneDelegate.swift in Sources */,
 				8E3FD2FE283FECCB00E2A32C /* PlayerViewController.swift in Sources */,
-				8E3FD302283FED1400E2A32C /* SerachResultViewController.swift in Sources */,
 				8E57DDE32843313B00128461 /* AlbumCollectionViewCellViewModel.swift in Sources */,
 				8E83FFF428422DF600D09604 /* NewReleaseResponse.swift in Sources */,
 				8E3FD306283FED7300E2A32C /* APICaller.swift in Sources */,

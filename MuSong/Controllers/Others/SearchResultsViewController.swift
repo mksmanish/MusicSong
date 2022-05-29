@@ -5,8 +5,6 @@
 //  Created by Tradesocio on 29/05/22.
 //
 
-import UIKit
-
 
 import UIKit
 
@@ -18,7 +16,7 @@ struct SearchSection {
 protocol SearchResultsViewControllerDelegate: AnyObject {
     func didTapResult(_ result: SearchResult)
 }
-
+/// types of cells on search
 class SearchResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     weak var delegate: SearchResultsViewControllerDelegate?
@@ -163,9 +161,13 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.deselectRow(at: indexPath, animated: true)
         let result = sections[indexPath.section].results[indexPath.row]
         delegate?.didTapResult(result)
+       
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section].title
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
 }

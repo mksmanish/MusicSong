@@ -28,6 +28,8 @@ class SearchResultSubtitleTableViewCell: UITableViewCell {
     private let iconImageViewe: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 5
+        imageView.layer.masksToBounds = true
         return imageView
     }()
 
@@ -48,7 +50,7 @@ class SearchResultSubtitleTableViewCell: UITableViewCell {
         super.layoutSubviews()
         let imageSize: CGFloat = contentView.height-10
         iconImageViewe.frame = CGRect(
-            x: 10,
+            x: 20,
             y: 5,
             width: imageSize,
             height: imageSize

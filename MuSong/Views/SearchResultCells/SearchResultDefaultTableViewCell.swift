@@ -39,7 +39,7 @@ class SearchResultDefaultTableViewCell: UITableViewCell {
         super.layoutSubviews()
         let imageSize: CGFloat = contentView.height-10
         iconImageViewe.frame = CGRect(
-            x: 10,
+            x: 20,
             y: 5,
             width: imageSize,
             height: imageSize
