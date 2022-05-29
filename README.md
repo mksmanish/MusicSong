@@ -17,10 +17,10 @@ This App is using the developer.spotify API to fetch data and customise into pla
 6. User can create a playlist in library sections.<br>
 7. for playing of songs AVfoundation is used.<br>
 <br>   
+
 Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
-![]([https://...Dark.png](https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.05.59.png" width="200" height="400" ))  |  ![]([https://...Ocean.png](https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.05.59.png" width="200" height="400" ))
-<br>
+![](https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.05.59.png" width="200" height="400" )  |  ![](https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.05.59.png" width="200" height="400" )
 <img src = "https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.05.59.png" width="200" height="400" ><br>
 <img src = "https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.06.19.png" width="200" height="400" ><br>
 <img src = "https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.06.50.png" width="200" height="400" ><br>
