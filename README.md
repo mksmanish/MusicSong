@@ -1,7 +1,7 @@
 # MusicSong
 
 This App is using the developer.spotify API to fetch data and customise into playlist,audio tracks and recommendations of songs.<br> 
-*This Project is avilable on ios academy tutorial on youtube also***<br>
+**This Project is avilable on ios academy tutorial on youtube also***<br>
 1. Consume the spotify APIs feed (converted to JSON) from the following URL:
    https://api.spotify.com/v1 + "required urls"<br> 
 2. The playlist contains a series of songs, with titles, subtitles, timestamps, etc, and many extraneous fields. Show these playlists summaries in a list as          depicted in the design.<br>
@@ -17,6 +17,10 @@ This App is using the developer.spotify API to fetch data and customise into pla
 6. User can create a playlist in library sections.<br>
 7. for playing of songs AVfoundation is used.<br>
 <br>   
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![]([https://...Dark.png](https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.05.59.png" width="200" height="400" ))  |  ![]([https://...Ocean.png](https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.05.59.png" width="200" height="400" ))
+<br>
 <img src = "https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.05.59.png" width="200" height="400" ><br>
 <img src = "https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.06.19.png" width="200" height="400" ><br>
 <img src = "https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.06.50.png" width="200" height="400" ><br>
