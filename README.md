@@ -20,7 +20,8 @@ This App is using the developer.spotify API to fetch data and customise into pla
 
 Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
-![](https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.05.59.png" width="200" height="400" )  |  ![](https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.05.59.png" width="200" height="400" )
+!(https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.05.59.png" width="100" height="400" )  |  !(https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.05.59.png" width="100" height="400" )
+<br>
 <img src = "https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.05.59.png" width="200" height="400" ><br>
 <img src = "https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.06.19.png" width="200" height="400" ><br>
 <img src = "https://github.com/mksmanish/MusicSong/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202022-05-29%20at%2015.06.50.png" width="200" height="400" ><br>
